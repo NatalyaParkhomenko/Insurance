@@ -1,0 +1,41 @@
+table {
+    width: 90%;
+    border-collapse: collapse;
+    border: 3px solid black; /* Границы таблицы и ячеек */
+    text-align: center; /* Горизонтальное выравнивание текста в центре ячейки */
+    vertical-align: middle; /* Вертикальное выравнивание текста по центру ячейки */
+}
+tbody td {
+    padding: 8px; /* Внутренний отступ для содержимого ячейки */
+}
+.column_name {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+}
+.btn-delete {
+    background-color: #ff0000; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убрать границу */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    cursor: pointer; /* Изменить курсор при наведении */
+    border-radius: 5px; /* Закругленные углы */
+
+}
+/* Основной стиль кнопки "Save" */
+.btn-save {
+    background-color: #28a745; /* Зеленый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    border: none; /* Убрать границу */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    cursor: pointer; /* Изменить курсор при наведении */
+    border-radius: 5px; /* Закругленные углы */
+}
+.btn-show-transaction {
+    background-color: #007bff; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    border: none; /* Убрать границу */
+    padding: 10px 20px; /* Отступы вокруг текста */
+    cursor: pointer; /* Изменить курсор при наведении */
+    border-radius: 5px; /* Закругленные углы */
+}

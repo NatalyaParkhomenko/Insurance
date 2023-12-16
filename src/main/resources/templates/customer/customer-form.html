@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/styles/customer.css">
+    <title>Save Customer</title>
+</head>
+<body>
+<div>
+  <h1>Customer Directory</h1>
+  <hr>
+  <p class="h4 mb-4"><h3>Save Customer</h3></p>
+  <form action="#" th:action="@{save}"
+        th:object="${request}" method="post">
+    <input type="text" placeholder="Введите pesel" th:field="*{pesel}">
+    <input type="text" placeholder="Введите signingDate" th:field="*{signingDate}">
+    <input type="text" placeholder="Введите insuranceId" th:field="*{insuranceId}">
+    <button type="submit" class="btn-save btn-info col-2">Save</button>
+  </form>
+  <hr>
+  <a th:href="@{/customer/getAllByInsuranceId(insuranceId=${insuranceId})}"><h3>Back to Customer List</h3></a>
+</div>
+
+</body>
+</html>

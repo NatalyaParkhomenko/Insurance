@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/styles/insurance.css">
+    <title>Save Insurance</title>
+</head>
+<body>
+<div>
+    <h1>Insurance Directory</h1>
+    <hr>
+    <p class="h4 mb-4"><h3>Save Insurance</h3></p>
+    <form action="#" th:action="@{save}"
+          th:object="${insurance}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <input type="text" placeholder="Введите type" th:field="*{type}">
+    <input type="text" placeholder="Введите coveragePercentage" th:field="*{coveragePercentage}">
+    <button type="submit" class="btn-save btn btn-info col-2">Save</button>
+    </form>
+    <hr>
+    <a th:href="@{/insurance/list}"><h3>Back to Insurances List</h3></a>
+</div>
+</body>
+</html>

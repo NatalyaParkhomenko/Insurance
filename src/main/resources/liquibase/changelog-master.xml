@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.23.xsd">
+    <changeSet id="1" author="natalya">
+        <sqlFile path="liquibase.mysql.create.table.1.sql"
+                 splitStatements="true"
+                 endDelimiter=";"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="2" author="natalya">
+        <comment>Adding column to the Customer</comment>
+        <sqlFile path="liquibase.mysql.update.table.1.sql"
+                 splitStatements="true"
+                 endDelimiter=";"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="3" author="natalya">
+        <comment>Insert values to the Insurance</comment>
+        <sqlFile path="liquibase.mysql.insert.table.insurance.3.sql"
+                 splitStatements="true"
+                 endDelimiter=";"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="4" author="natalya">
+        <comment>Insert values to the Customer</comment>
+        <sqlFile path="liquibase.mysql.insert.table.customer.4.sql"
+                 splitStatements="true"
+                 endDelimiter=";"
+                 relativeToChangelogFile="true"/>
+    </changeSet>
+</databaseChangeLog>
+

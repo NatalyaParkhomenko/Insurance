@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/transaction.css}"/>
+    <title>Transaction</title>
+</head>
+<body>
+<div>
+    <h1>Transaction Directory</h1>
+    <a th:href="@{/transaction/showFormForAdd(cardId=${cardId})}">
+        <h3>Add Transaction</h3>
+    </a><br><br>
+    <table border="1">
+        <thead>
+        <tr>
+            <th class="column_name">Name</th>
+            <th class="column_name">Sum</th>
+            <th class="column_name">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="transaction:${transactions}">
+            <td th:text="${transaction.name}">
+            <td th:text="${transaction.sum}">
+            <td>
+                <a th:href="@{/transaction/deleteById(id=${transaction.id}, cardId=${cardId})}"
+                   class="btn-delete btn danger btn-sm">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</body>
+</html>

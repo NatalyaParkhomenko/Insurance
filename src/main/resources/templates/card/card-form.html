@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/card.css}"/>
+    <title>Save Card</title>
+</head>
+<body>
+<div>
+    <h1>Card Directory</h1>
+    <hr>
+    <p class="h4 mb-4"><h3>Save Card</h3></p>
+    <form action="#" th:action="@{save}"
+          th:object="${request}" method="post">
+        <input type="text" placeholder="Введите name" th:field="*{name}">
+        <input type="text" placeholder="Введите cardNumber" th:field="*{cardNumber}">
+        <input type="text" placeholder="Введите customerId" th:field="*{customerId}">
+        <button type="submit" class="btn-save btn-info col-2">Save</button>
+    </form>
+    <hr>
+    <a th:href="@{/card/getAllByCustomerId(customerId=${customerId})}">
+        <h3>Back to Card List</h3></a>
+</div>
+</body>
+</html>

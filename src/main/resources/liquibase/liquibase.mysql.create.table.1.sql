@@ -1,0 +1,39 @@
+CREATE TABLE insurance
+(
+    `ID`                  INT         NOT NULL AUTO_INCREMENT,
+    `TYPE`                VARCHAR(45) NOT NULL,
+    `COVERAGE_PERCENTAGE` INT         NOT NULL,
+    PRIMARY KEY (ID)
+);
+
+CREATE TABLE customer
+(
+    `ID`           INT         NOT NULL AUTO_INCREMENT,
+    `PESEL`        VARCHAR(45) NOT NULL,
+    `SIGNING_DATE` DATE        NOT NULL,
+    `INSURANCE_ID` INT NULL,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (INSURANCE_ID) REFERENCES insurance (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE card
+(
+    `ID`          INT         NOT NULL AUTO_INCREMENT,
+    `NAME`        VARCHAR(45) NOT NULL,
+    `CARD_NUMBER` INT         NOT NULL,
+    `CUSTOMER_ID` INT NULL,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (CUSTOMER_ID) REFERENCES customer (ID) ON DELETE CASCADE
+);
+
+CREATE TABLE transaction
+(
+    `ID`      INT         NOT NULL AUTO_INCREMENT,
+    `NAME`    VARCHAR(45) NOT NULL,
+    `SUM`     INT         NOT NULL,
+    `CARD_ID` INT NULL,
+    PRIMARY KEY (ID),
+    FOREIGN KEY (CARD_ID) REFERENCES card (ID) ON DELETE CASCADE
+);
+
+

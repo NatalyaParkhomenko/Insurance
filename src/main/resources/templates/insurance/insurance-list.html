@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/insurance.css}"/>
+    <title>Insurance</title>
+</head>
+<body>
+<div>
+    <h1>Insurance Directory</h1>
+    <hr>
+    <a th:href="@{/insurance/showFormForAdd}"><h3>Add Insurance</h3></a>
+    <br><br>
+    <table border="1">
+        <thead>
+        <tr>
+            <th class="column_name">Type Insurance</th>
+            <th class="column_name">Coverage Percentage</th>
+            <th class="column_name">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  th:each="insurance : ${insurances}">
+            <td th:text="${insurance.type}"/>
+            <td th:text="${insurance.coveragePercentage}"/>
+            <td>
+                <a th:href="@{/customer/getAllByInsuranceId(insuranceId=${insurance.id})}"
+                   class="btn-show-customer btn btn-info btn-sm">
+                    Show Customer
+                </a>
+                <a th:href="@{/insurance/deleteById(insuranceId=${insurance.id})}"
+                   class="btn-delete btn danger btn-sm">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

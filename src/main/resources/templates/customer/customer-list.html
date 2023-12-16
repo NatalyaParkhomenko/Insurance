@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/customer.css}"/>
+    <title>Customer</title>
+</head>
+<body>
+<div>
+    <h1>Customer Directory</h1>
+    <a th:href="@{/customer/showFormForAdd(insuranceId=${insuranceId})}"><h3>Add Customer</h3></a><br><br>
+    <table border="1">
+        <thead>
+        <tr>
+            <th class="column_name">Pesel</th>
+            <th class="column_name">Signing Date</th>
+            <th class="column_name">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.pesel}"></td>
+            <td th:text="${customer.signingDate}"></td>
+            <td>
+                <a th:href="@{/card/getAllByCustomerId(customerId=${customer.id})}"
+                   class="btn-show-card btn btn-info btn-sm">
+                    Show Card
+                </a>
+                <a th:href="@{/customer/deleteById(id=${customer.id}, insuranceId=${insuranceId})}"
+                   class="btn-delete btn danger btn-sm">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

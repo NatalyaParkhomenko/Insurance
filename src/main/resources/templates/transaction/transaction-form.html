@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/transaction.css}"/>
+    <title>Save Transactional</title>
+</head>
+<body>
+<div>
+    <h1>Transactional Directory</h1>
+    <hr>
+    <p class="h4 mb-4">
+    <h3>Save Customer</h3></p>
+    <form action="#" th:action="@{save}"
+          th:object="${request}" method="post">
+        <input type="text" placeholder="Введите name" th:field="*{name}">
+        <input type="text" placeholder="Введите sum" th:field="*{sum}">
+        <input type="text" placeholder="Введите cardId" th:field="*{cardId}">
+        <button type="submit" class="btn-save btn-info col-2">Save</button>
+    </form>
+    <hr>
+    <a th:href="@{/transaction/getAllByCardId(cardId=${cardId})}"><h3>Back to Transactional</h3></a>
+</div>
+
+</body>
+</html>
